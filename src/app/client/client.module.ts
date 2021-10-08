@@ -14,7 +14,7 @@ import { ReviewComponent } from './pages/review/review.component';
     HomeComponent,
     ContactComponent,
     TheaterComponent,
-    ReviewComponent
+    ReviewComponent,
   ],
   imports: [
     CommonModule,
