@@ -7,6 +7,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ClientRoutingModule } from './client-routing.module';
 import { TheaterComponent } from './pages/theater/theater.component';
 import { ReviewComponent } from './pages/review/review.component';
+import { DemoPipesComponent } from './pages/demo-pipes/demo-pipes.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ReviewComponent } from './pages/review/review.component';
     ContactComponent,
     TheaterComponent,
     ReviewComponent,
+    DemoPipesComponent,
   ],
   imports: [
     CommonModule,

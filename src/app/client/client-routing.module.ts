@@ -1,3 +1,4 @@
+import { DemoPipesComponent } from './pages/demo-pipes/demo-pipes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
           import('./pages/list-movie/list-movie.module').then(
             (m) => m.ListMovieModule
           ),
+      },
+      {
+        path: 'pipes',
+        component: DemoPipesComponent,
       },
     ],
   },

@@ -19,27 +19,30 @@ export class ApiService {
   }
 
   post(endpoint: string, data: any): Observable<any> {
-    return this.http
-      .post(baseUrl + endpoint, data)
-      .pipe(catchError(this.handleError));
+    return this.http.post(baseUrl + endpoint, data).pipe(catchError(this.handleError));
   }
 
   handleError(error: any) {
     switch (error.status) {
       case 300:
         break;
+
       case 400:
         break;
+
       case 404:
         alert(error.message);
         break;
+
       case 401:
         break;
+
       case 500:
         break;
+
       default:
         break;
     }
-    return throwError(error);
+    return throwError(error)
   }
 }

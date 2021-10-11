@@ -1,7 +1,7 @@
-import { AuthService } from './../../../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,20 +14,15 @@ export class LoginComponent implements OnInit {
     matKhau: new FormControl(''),
   });
 
-  constructor(private authservice: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
   onLogin() {
-    console.log(this.loginForm.value);
-    this.authservice.login(this.loginForm.value).subscribe(
-      (data) => {
-        localStorage.setItem('currentUser', JSON.stringify(data.content));
-        this.router.navigate(['/']);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    // console.log(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe((data) => {
+      localStorage.setItem('currentUser', JSON.stringify(data.content));
+      this.router.navigate(['/']);
+    });
   }
 }
